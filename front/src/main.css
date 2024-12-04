@@ -87,6 +87,11 @@ body {
 	text-align: center;
 }
 
+.App-content h1 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
 .question-container h2 {
 	font-size: 18px;
 	margin-bottom: 30px;

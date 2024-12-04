@@ -37,21 +37,18 @@ if (isset($_GET['code'])) {
 	$response = curl_exec($ch);
 	curl_close($ch);
 
-	$responseData = json_decode($response, true);
+	$rspData = json_decode($response, true);
 
-	if (isset($responseData['body']['access_token'])) {
-		$accessToken = $responseData['body']['access_token'];
-		$refreshToken = $responseData['body']['refresh_token'];
+	if (isset($rspData['body']['access_token'])) {
+		$accessToken = $rspData['body']['access_token'];
+		$refreshToken = $rspData['body']['refresh_token'];
+
 		$ch = curl_init();
-
 		curl_setopt($ch, CURLOPT_URL, "https://wbsapi.withings.net/measure");
-
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
 		curl_setopt($ch, CURLOPT_HTTPHEADER, [
 			'Authorization: Bearer ' . $accessToken
 		]);
-
 		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
 			'action' => 'getmeas',
 			'meastype' => 1,
@@ -63,7 +60,7 @@ if (isset($_GET['code'])) {
 		$obj = json_decode($rsp);
 		var_dump($obj->body->measuregrps[0]);
 	} else {
-		echo 'Error: ' . $responseData['status'] . '<br>';
+		echo 'Error: ' . $rspData['status'] . '<br>';
 	}
 }
 
