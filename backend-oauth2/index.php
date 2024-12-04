@@ -1,7 +1,7 @@
 <?php
 
-define('CLIENT_ID', 'a16837aaa8f536b229ce20fa8e90a2739885b640ff67de7b84562b6fe0e27513');
-define('CLIENT_SECRET', '881b7dc5686e38894ef0cb27019ebc44e7daf72cc329fe914a43acee15774782');
+define('CLIENT_ID', '');
+define('CLIENT_SECRET', '');
 define('REDIRECT_URI', 'http://localhost:7070');
 define('AUTHORIZATION_URL', 'https://account.withings.com/oauth2_user/authorize2');
 define('TOKEN_URL', 'https://wbsapi.withings.net/v2/oauth2');
