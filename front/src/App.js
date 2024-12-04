@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Question from "./Question";
 
@@ -20,8 +20,6 @@ const App = () => {
     setStarted(true);
     setQuestions(questions);
     setCurrentQuestion(0);
-
-    console.log(questions);
   };
 
   const nextQuestion = (isCorrect) => {
@@ -36,8 +34,6 @@ const App = () => {
     setStarted(false);
     setScore(0);
   };
-
-  useEffect(() => {}, []);
 
   return (
     <div className="App">

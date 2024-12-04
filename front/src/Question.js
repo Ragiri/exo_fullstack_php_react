@@ -17,10 +17,6 @@ const Question = (props) => {
 		}
   };
 
-  useEffect(() => {
-    console.log(props.question);
-  }, []);
-
   return (
     <div className="question-container">
       <h2>{props.question?.question.text}</h2>
